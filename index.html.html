@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Portfolio of VARSHA R, Electronics and Communication Engineering student aspiring to become an Embedded Engineer.">
+<title>VARSHA R | Embedded Systems Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EDF2F0;--surface:#F8FBF9;--ink:#10241D;--muted:#4A5F57;--line:#C6D4CD;
+  --board:#0E3B2E;--copper:#D9894A;--link:#0C5A43;--chip:#DDE8E3;
+  --display:"Bricolage Grotesque","Segoe UI",Arial,sans-serif;
+  --body:"Hanken Grotesk","Segoe UI",Arial,sans-serif;
+  --mono:"IBM Plex Mono",Consolas,monospace;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0A1410;--surface:#101E18;--ink:#E5EEE9;--muted:#9BB0A6;--line:#24382F;--board:#0E3B2E;--link:#6FD1AC;--chip:#17291F;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0A1410;--surface:#101E18;--ink:#E5EEE9;--muted:#9BB0A6;--line:#24382F;--board:#0E3B2E;--link:#6FD1AC;--chip:#17291F;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.65;font-size:1.02rem}
+a{color:var(--link)}
+a:focus-visible,.btn:focus-visible{outline:3px solid var(--copper);outline-offset:3px}
+.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--board);z-index:11}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--board);color:#E9EFE6}
+.nav{min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-family:var(--display);font-weight:800;letter-spacing:.04em;color:#fff;text-decoration:none;font-size:1.1rem}
+nav{display:flex;gap:22px;flex-wrap:wrap}
+nav a{color:#BFD3C8;text-decoration:none;font-weight:600;font-size:.93rem;padding:4px 0;border-bottom:2px solid transparent}
+nav a:hover{color:#fff;border-color:var(--copper)}
+.hero{background:var(--board);color:#E9EFE6;padding:72px 0 84px;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1.5px);background-size:22px 22px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}
+.role{font-family:var(--mono);font-size:.9rem;color:var(--copper)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(3rem,8vw,6rem);line-height:.98;letter-spacing:-.035em;margin:14px 0 20px;color:#fff}
+.hero p{max-width:520px;color:#C9DBD1;font-size:1.1rem;margin:0 0 28px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:12px 20px;border-radius:4px;font-weight:700;text-decoration:none;border:2px solid var(--copper)}
+.btn.primary{background:var(--copper);color:#1B1208}
+.btn.ghost{color:#fff}
+.btn:hover{text-decoration:none;filter:brightness(1.1)}
+.board{width:100%;height:auto;max-width:520px;justify-self:end}
+.flow{stroke-dasharray:5 9;animation:flow 1.6s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-14}}
+@media (prefers-reduced-motion:reduce){.flow{animation:none}html{scroll-behavior:auto}}
+section.block{padding:72px 0 8px}
+h2{font-family:var(--display);font-weight:700;font-size:2rem;letter-spacing:-.02em;margin:0 0 6px;display:flex;align-items:center;gap:14px}
+h2::after{content:"";flex:1;height:2px;background:linear-gradient(90deg,var(--copper) 0 48px,var(--line) 48px)}
+.lede{color:var(--muted);margin:0 0 30px}
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:40px}
+.about p{margin:0 0 16px;max-width:62ch}
+dl.spec{margin:0;border:1px solid var(--line);background:var(--surface);border-radius:6px}
+dl.spec div{padding:14px 18px;border-bottom:1px solid var(--line)}
+dl.spec div:last-child{border:0}
+dt{font-family:var(--mono);font-size:.78rem;color:var(--muted)}
+dd{margin:2px 0 0;font-weight:600}
+.pins{border-top:1px solid var(--line)}
+.pin{display:grid;grid-template-columns:230px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--line);align-items:center}
+.pin h3{margin:0;font-family:var(--display);font-size:1.1rem}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{background:var(--chip);border:1px solid var(--line);border-radius:3px;padding:3px 10px;font-family:var(--mono);font-size:.82rem}
+.proj{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--copper);border-radius:6px;padding:24px;display:flex;flex-direction:column}
+.card h3{font-family:var(--display);font-size:1.25rem;line-height:1.25;margin:0 0 10px}
+.card p{margin:0 0 16px;color:var(--muted)}
+.card .tags{margin-top:auto}
+.edu{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.edu .card h3{margin-bottom:6px}
+.edu .card p{margin:0 0 6px}
+.contact{background:var(--board);color:#E9EFE6;border-radius:8px;padding:40px;margin:0}
+.contact h2{color:#fff}
+.contact p{color:#C9DBD1;max-width:56ch}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.links a{color:#fff;border:2px solid var(--copper);padding:10px 18px;border-radius:4px;font-weight:700;text-decoration:none}
+.links a:hover{background:var(--copper);color:#1B1208}
+footer{padding:36px 0 28px;color:var(--muted);font-size:.9rem}
+@media (max-width:820px){
+  .nav{flex-direction:column;align-items:flex-start;padding:14px 0;gap:8px}
+  nav{gap:8px 18px}
+  .hero .wrap,.about,.proj,.edu{grid-template-columns:1fr}
+  .board{justify-self:center}
+  .pin{grid-template-columns:1fr;gap:10px}
+  .hero{padding:48px 0 56px}
+  .contact{padding:28px 22px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home">VARSHA R</a>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+<section class="hero" id="home">
+  <div class="wrap">
+    <div>
+      <div class="role">Embedded Engineer in the making</div>
+      <h1>VARSHA R</h1>
+      <p>Electronics and Communication Engineering student working on firmware, microcontrollers and IoT. I build practical projects that connect hardware, software and real-world use.</p>
+      <div class="actions">
+        <a class="btn primary" href="#projects">See my projects</a>
+        <a class="btn ghost" href="#contact">Contact me</a>
+        <!-- Add your resume: <a class="btn ghost" href="YOUR_RESUME_PDF_URL" target="_blank" rel="noopener">View resume</a> -->
+      </div>
+    </div>
+    <svg class="board" viewBox="0 0 460 400" role="img" aria-label="Microcontroller chip with signal traces labeled UART, SPI, I2C, CAN, ADC, PWM, GPIO and timers">
+      <g fill="none" stroke="#D9894A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity=".45">
+        <path d="M150 150H108L88 130H64"/><path d="M150 185H64"/><path d="M150 220H100L80 240H64"/><path d="M150 255H108L88 275H64"/>
+        <path d="M310 150H352L372 130H396"/><path d="M310 185H396"/><path d="M310 220H360L380 240H396"/><path d="M310 255H352L372 275H396"/>
+      </g>
+      <g class="flow" fill="none" stroke="#F2B27A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M150 150H108L88 130H64"/><path d="M150 185H64"/><path d="M150 220H100L80 240H64"/><path d="M150 255H108L88 275H64"/>
+        <path d="M310 150H352L372 130H396"/><path d="M310 185H396"/><path d="M310 220H360L380 240H396"/><path d="M310 255H352L372 275H396"/>
+      </g>
+      <g fill="#D9894A"><circle cx="64" cy="130" r="5"/><circle cx="64" cy="185" r="5"/><circle cx="64" cy="240" r="5"/><circle cx="64" cy="275" r="5"/><circle cx="396" cy="130" r="5"/><circle cx="396" cy="185" r="5"/><circle cx="396" cy="240" r="5"/><circle cx="396" cy="275" r="5"/></g>
+      <g font-family="IBM Plex Mono,Consolas,monospace" font-size="13" fill="#E9EFE6">
+        <text x="52" y="134" text-anchor="end">UART</text><text x="52" y="189" text-anchor="end">SPI</text><text x="52" y="244" text-anchor="end">I²C</text><text x="52" y="279" text-anchor="end">CAN</text>
+        <text x="408" y="134">ADC</text><text x="408" y="189">PWM</text><text x="408" y="244">GPIO</text><text x="408" y="279">TIMERS</text>
+      </g>
+      <rect x="150" y="120" width="160" height="160" rx="10" fill="#07251C" stroke="#E9EFE6" stroke-width="2"/>
+      <circle cx="168" cy="138" r="5" fill="none" stroke="#E9EFE6" stroke-width="1.5"/>
+      <g font-family="IBM Plex Mono,Consolas,monospace" text-anchor="middle" fill="#E9EFE6">
+        <text x="230" y="192" font-size="17" font-weight="500">VARSHA R</text>
+        <text x="230" y="214" font-size="11" fill="#D9894A">ECE · FIRMWARE · IoT</text>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<section class="block" id="about"><div class="wrap">
+  <h2>About me</h2><p class="lede">Where I study and what I want to work on.</p>
+  <div class="about">
+    <div>
+      <p>I am pursuing a Bachelor of Engineering in Electronics and Communication Engineering at Government College of Engineering, Srirangam, Trichy. I am building my foundation in C, Embedded C, microcontrollers and communication protocols.</p>
+      <p>My interests include firmware development, STM32, ESP32, sensor interfacing and IoT applications. I am looking for an entry-level role where I can apply what I know, learn from experienced engineers and contribute to real engineering projects.</p>
+    </div>
+    <dl class="spec">
+      <div><dt>Career interest</dt><dd>Embedded Engineer / Embedded Software Engineer</dd></div>
+      <div><dt>Degree</dt><dd>B.E., Electronics and Communication Engineering</dd></div>
+      <div><dt>Institution</dt><dd>Government College of Engineering, Srirangam, Trichy</dd></div>
+      <div><dt>Location</dt><dd>Tamil Nadu, India</dd></div>
+    </dl>
+  </div>
+</div></section>
+
+<section class="block" id="skills"><div class="wrap">
+  <h2>Technical skills</h2><p class="lede">Tools and concepts I use in my projects and practice.</p>
+  <div class="pins">
+    <div class="pin"><h3>Programming</h3><div class="tags"><span class="tag">C</span><span class="tag">Embedded C</span><span class="tag">Python</span></div></div>
+    <div class="pin"><h3>Embedded platforms</h3><div class="tags"><span class="tag">STM32</span><span class="tag">ARM basics</span><span class="tag">ESP32</span><span class="tag">Arduino</span></div></div>
+    <div class="pin"><h3>Protocols and interfaces</h3><div class="tags"><span class="tag">UART</span><span class="tag">SPI</span><span class="tag">I²C</span><span class="tag">CAN</span><span class="tag">GPIO</span></div></div>
+    <div class="pin"><h3>Embedded concepts</h3><div class="tags"><span class="tag">Sensor interfacing</span><span class="tag">ADC</span><span class="tag">PWM</span><span class="tag">Interrupts</span><span class="tag">Timers</span></div></div>
+    <div class="pin"><h3>Development tools</h3><div class="tags"><span class="tag">STM32CubeIDE</span><span class="tag">STM32CubeMX</span><span class="tag">Arduino IDE</span><span class="tag">Wokwi</span></div></div>
+    <div class="pin"><h3>IoT and other tools</h3><div class="tags"><span class="tag">Firebase</span><span class="tag">Blynk</span><span class="tag">GitHub</span><span class="tag">Streamlit</span><span class="tag">Folium</span></div></div>
+  </div>
+</div></section>
+
+<section class="block" id="projects"><div class="wrap">
+  <h2>Projects</h2><p class="lede">Selected academic and practical work.</p>
+  <!-- Add circuit diagrams, source-code links, photos, results and your contribution to each project when available. -->
+  <div class="proj">
+    <article class="card"><h3>AquaGuard: Smart Plant Root Monitoring and Water Control</h3><p>An ESP32 and IoT prototype that monitors plant root conditions and supports remote water-supply control. It uses Firebase Realtime Database and a Kodular app for data access and control.</p><div class="tags"><span class="tag">ESP32</span><span class="tag">IoT</span><span class="tag">Firebase</span><span class="tag">Kodular</span></div></article>
+    <article class="card"><h3>Patient Monitoring System</h3><p>An ESP32 prototype that combines sensor inputs for basic patient monitoring. It uses a DHT11 temperature and humidity sensor and a KY-039 pulse sensor, with an I²C interface in the setup.</p><div class="tags"><span class="tag">ESP32</span><span class="tag">DHT11</span><span class="tag">KY-039</span><span class="tag">I²C</span></div></article>
+    <article class="card"><h3>DigSafe: Smart Transportation Monitoring</h3><p>A GPS and weight-based truck monitoring project. The software prototype uses Python, Streamlit, Folium and an Isolation Forest model to flag potential overweight-vehicle events and show tracking information.</p><div class="tags"><span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">Folium</span><span class="tag">Isolation Forest</span><span class="tag">GPS</span></div></article>
+    <article class="card"><h3>Smart Object Detection and Alert System</h3><p>A sensor-based prototype that uses an IR proximity sensor to detect nearby objects and trigger an alert. It explores basic sensing, input processing and alert mechanisms in an embedded application.</p><div class="tags"><span class="tag">IR proximity sensor</span><span class="tag">Embedded systems</span><span class="tag">Alert system</span></div></article>
+  </div>
+</div></section>
+
+<section class="block" id="education"><div class="wrap">
+  <h2>Education and learning</h2><p class="lede">Academic background and technical focus.</p>
+  <!-- Add your expected graduation year and CGPA/percentage in the first card. -->
+  <div class="edu">
+    <div class="card"><h3>B.E., Electronics and Communication Engineering</h3><p>Government College of Engineering, Srirangam, Trichy</p><p>Currently pursuing</p></div>
+    <div class="card"><h3>Technical focus</h3><p>C and Embedded C, microcontrollers, ARM fundamentals, STM32 development, serial communication protocols, sensor interfacing and IoT applications.</p></div>
+  </div>
+</div></section>
+
+<section class="block" id="contact" style="padding-bottom:56px"><div class="wrap">
+  <div class="contact">
+    <h2>Let’s connect</h2>
+    <p>I am open to entry-level opportunities, technical discussions and learning experiences in embedded systems and IoT.</p>
+    <div class="links">
+      <!-- Replace the placeholders below with your real contact links. -->
+      <a href="mailto:varshuramesh006@gmail.com">Email</a>
+
+<a href="https://www.linkedin.com/in/varsha-ramesh-b841332a5/"
+   target="_blank" rel="noopener">LinkedIn</a>
+
+<a href="https://profile.indeed.com/?hl=en_IN&co=IN&from=gnav-homepage"
+   target="_blank" rel="noopener">Indeed</a>
+    </div>
+  </div>
+</div></section>
+</main>
+<footer><div class="wrap">© 2026 VARSHA R. Embedded Systems Portfolio.</div></footer>
+</body>
+</html>
